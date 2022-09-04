@@ -1,11 +1,11 @@
 class Todo {
-    id: string;
-    text: string;
+    id: string
+    text: string
 
     constructor(textItem: string) {
-        this.text = textItem;
-        this.id = new Date().toISOString();
+        this.text = textItem
+        this.id = Math.random().toString()
     }
 }
 
-export default Todo;
+export default Todo

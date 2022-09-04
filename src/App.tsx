@@ -1,14 +1,19 @@
-import Todos from "./components/Todos";
-import Todo from "./models/Todo";
+import { FC, useState } from 'react'
+import NewTodo from './components/NewTodo'
+import Todos from './components/Todos'
+import Todo from './models/Todo'
+import TodosContextProvider from './store/todo-context'
 
-const App: React.FC = () => {
-    const todos = [new Todo("Learn React"), new Todo("Learn TypeScript")];
+const App: FC = () => {
     return (
-        <div>
-            <h1>Hello World</h1>
-            <Todos items={todos} />
+        <div className='form-container'>
+            <h1>Todo List</h1>
+            <TodosContextProvider>
+                <NewTodo />
+                <Todos />
+            </TodosContextProvider>
         </div>
-    );
-};
+    )
+}
 
-export default App;
+export default App
